@@ -1,0 +1,209 @@
+/* System-first typography with a modern feel */
+:root{
+  --bg: #0b0f19;
+  --card: rgba(255,255,255,0.06);
+  --card2: rgba(255,255,255,0.08);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.68);
+  --faint: rgba(255,255,255,0.48);
+  --line: rgba(255,255,255,0.12);
+
+  --shadow: 0 24px 60px rgba(0,0,0,0.45);
+  --radius: 20px;
+
+  --accent: 120deg; /* tweak for mood: 120=green, 210=blue, 300=purple */
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color: var(--text);
+  background: radial-gradient(1200px 900px at 20% 10%, rgba(93, 140, 255, 0.18), transparent 55%),
+              radial-gradient(900px 700px at 90% 30%, rgba(255, 140, 95, 0.14), transparent 60%),
+              radial-gradient(800px 600px at 40% 100%, rgba(140, 255, 205, 0.10), transparent 60%),
+              var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  letter-spacing: 0.2px;
+}
+
+/* subtle grain & vignette */
+.bg{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 900px at 50% 0%, rgba(255,255,255,0.08), transparent 60%),
+    radial-gradient(900px 700px at 50% 110%, rgba(0,0,0,0.55), transparent 55%);
+  mix-blend-mode: overlay;
+  opacity: 0.9;
+}
+
+.wrap{
+  min-height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  padding: 56px 20px 40px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.top{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin: 0 auto 18px;
+  width: min(720px, 100%);
+}
+
+.mark{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background:
+    linear-gradient(var(--accent), rgba(255,255,255,0.34), rgba(255,255,255,0.06)),
+    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,0.55), transparent 60%);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+.brand .name{
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.1;
+}
+.brand .tagline{
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card{
+  width: min(720px, 100%);
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--card2), var(--card));
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 24px 22px;
+  backdrop-filter: blur(14px);
+}
+
+h1{
+  margin: 0 0 10px;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+.lead{
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 15.5px;
+  max-width: 62ch;
+}
+
+.pillrow{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+.pill{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.82);
+  font-size: 13px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 0 0 10px;
+}
+@media (min-width: 680px){
+  .grid{ grid-template-columns: 1fr 1fr; }
+}
+
+.kv .k{
+  font-size: 12px;
+  color: var(--faint);
+  margin-bottom: 4px;
+}
+.kv .v{
+  font-size: 14px;
+  color: var(--text);
+}
+
+.sep{
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: 18px 0 14px;
+}
+
+.links{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: transform .08s ease, background .12s ease, border-color .12s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.22);
+}
+
+a{
+  color: rgba(205, 230, 255, 0.92);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(205,230,255,0.25);
+}
+a:hover{
+  border-bottom-color: rgba(205,230,255,0.55);
+}
+
+.fine{
+  margin: 0;
+  color: var(--faint);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.foot{
+  width: min(720px, 100%);
+  margin: 18px auto 0;
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  justify-content:center;
+  color: rgba(255,255,255,0.55);
+  font-size: 12.5px;
+}
+.foot .dot{
+  opacity: 0.55;
+}
+.foot a{
+  color: rgba(255,255,255,0.70);
+  border-bottom-color: rgba(255,255,255,0.18);
+}
+.foot a:hover{
+  border-bottom-color: rgba(255,255,255,0.35);
+}
