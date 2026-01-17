@@ -58,14 +58,14 @@ body{
 }
 
 .mark{
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background:
-    linear-gradient(var(--accent), rgba(255,255,255,0.34), rgba(255,255,255,0.06)),
-    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,0.55), transparent 60%);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.16);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.mark svg{
+  display: block;
 }
 
 .brand .name{
