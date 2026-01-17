@@ -78,6 +78,18 @@
             font-size: 0.9rem;
         }
 
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -125,7 +137,7 @@
                 <h2>Kontakt</h2>
                 <p>
                     Für weitere Informationen besuchen Sie uns auf 
-                    <a href="https://www.brands-advisory.com" style="color: #667eea; text-decoration: none;">www.brands-advisory.com</a>
+                    <a href="https://www.brands-advisory.com">www.brands-advisory.com</a>
                 </p>
             </section>
         </main>
@@ -133,7 +145,14 @@
 
     <footer>
         <p>&copy; <span id="year"></span> Brands Advisory. Alle Rechte vorbehalten.</p>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
+
+    <script>
+        // Set current year in footer
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    </script>
 </body>
 </html>
