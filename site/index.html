@@ -132,7 +132,8 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Brands Advisory. Alle Rechte vorbehalten.</p>
+        <p>&copy; <span id="year"></span> Brands Advisory. Alle Rechte vorbehalten.</p>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
 </body>
 </html>
